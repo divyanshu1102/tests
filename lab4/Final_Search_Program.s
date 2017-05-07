@@ -1,12 +1,6 @@
 /******************************************************************************
-* @file array.s
-* @brief simple array declaration and iteration example
-*
-* Simple example of declaring a fixed-width array and traversing over the
-* elements for printing.
-*
-* @author Christopher D. McMurrough
-******************************************************************************/
+* @author Divyanshu Sharma
+*****************************************************************************/
  
 .global main
 .func main
@@ -164,11 +158,11 @@ search_prompt:			@backup R7
 searchdone:
      B _exit                 @ exit if done
 _exit:  
-    MOV R7, #4              @ write syscall, 4
-    MOV R0, #1              @ output stream to monitor, 1
-    MOV R2, #21             @ print string length
-    LDR R1, =exit_str       @ string at label exit_str:
-    SWI 0                   @ execute syscall
+   @ MOV R7, #4              @ write syscall, 4
+   @ MOV R0, #1              @ output stream to monitor, 1
+   @ MOV R2, #21             @ print string length
+   @ LDR R1, =exit_str       @ string at label exit_str:
+   @ SWI 0                   @ execute syscall
     MOV R7, #1              @ terminate syscall, 1
     SWI 0                   @ execute syscall
 
@@ -188,4 +182,4 @@ entry:		.asciz	    "%d"
 prompt_str:      .ascii     "ENTER A SEARCH VALUE:"
 input:		.asciz		"Input= %d\n"
 number:          .asciz        "%d"
-dne:             .asciz      "That value does not exist in the array!"
+dne:             .asciz      "That value does not exist in the array!\n"
